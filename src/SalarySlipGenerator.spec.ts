@@ -1,15 +1,17 @@
 import { describe, it, expect } from "vitest"
 import { SalarySlipGenerator } from "./SalarySlipGenerator.js"
+import { SalarySlip } from "./SalarySlip.js"
+import { Employee } from "./Employee.js"
 
 describe("Default test", () => {
   it("should work", () => {
     const salarySlipGenerator = new SalarySlipGenerator()
-    const employee = new Employee()
+    const employee: Employee = { id: 12345, name: "John J Doe", annualGrossSalary: 5000 }
 
-    const generateFor = salarySlipGenerator.generateFor(employee)
+    const salarySlip = salarySlipGenerator.generateFor(employee)
 
-    const expected = new SalarySlip(12345, "John J Doe", 5000)
+    const expectedSalarySlip: SalarySlip = { id: 12345, name: "John J Doe", monthlyGrossSalary: 416.67 }
 
-    expect(generateFor.equals(expected)).toBe(true)
+    expect(salarySlip).toEqual(expectedSalarySlip)
   })
 })
