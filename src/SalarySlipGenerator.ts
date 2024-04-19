@@ -3,6 +3,8 @@ import { SalarySlip } from "./SalarySlip.js"
 
 export class SalarySlipGenerator {
   generateFor(employee: Employee): SalarySlip {
-    return { id: 12345, name: "John J Doe", monthlyGrossSalary: 416.67 }
+    const monthlyGrossSalary = (parseInt(employee.annualGrossSalary) / 12).toFixed(2)
+
+    return { id: employee.id, name: "John J Doe", monthlyGrossSalary }
   }
 }
