@@ -17,11 +17,11 @@ describe("Default test", () => {
 
   it("should generate salary slip for employee", () => {
     const salarySlipGenerator = new SalarySlipGenerator()
-    const employee: Employee = { id: 123, name: "Manu", annualGrossSalaryInPounds: 12000 }
+    const employee: Employee = { id: 123, name: "Manu", annualGrossSalaryInPounds: 8000 }
 
     const salarySlip = salarySlipGenerator.generateFor(employee)
 
-    const expectedSalarySlip: SalarySlip = { id: 123, name: "John J Doe", monthlyGrossSalaryInPounds: 1000.0 }
+    const expectedSalarySlip: SalarySlip = { id: 123, name: "John J Doe", monthlyGrossSalaryInPounds: 666.67 }
 
     expect(salarySlip).toEqual(expectedSalarySlip)
   })
