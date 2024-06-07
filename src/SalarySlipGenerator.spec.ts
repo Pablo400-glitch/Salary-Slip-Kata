@@ -21,7 +21,7 @@ describe("Default test", () => {
 
     const salarySlip = salarySlipGenerator.generateFor(employee)
 
-    const expectedSalarySlip: SalarySlip = { id: 123, name: "John J Doe", monthlyGrossSalaryInPounds: 666.67 }
+    const expectedSalarySlip: SalarySlip = { id: 123, name: "Manu", monthlyGrossSalaryInPounds: 666.67 }
 
     expect(salarySlip).toEqual(expectedSalarySlip)
   })
